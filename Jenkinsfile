@@ -46,7 +46,6 @@ pipeline {
         always {
             echo 'Archiving test reports'
             junit '**/target/surefire-reports/*.xml'
-            cleanWs()
         }
     }
 }
