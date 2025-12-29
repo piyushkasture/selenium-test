@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent node1
 
     options {
         disableConcurrentBuilds()
