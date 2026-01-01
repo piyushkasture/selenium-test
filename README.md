@@ -97,3 +97,4 @@ After running tests, find the reports at:
 - Grid URL can be set via system property: `-Dselenium.grid.url=http://your-grid:4444/wd/hub`
 - Default Grid URL: `http://localhost:4444/wd/hub`
 
+
