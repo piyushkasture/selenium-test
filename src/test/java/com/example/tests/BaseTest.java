@@ -19,7 +19,7 @@ public class BaseTest {
     protected WebDriver driver;
     
     // Default Selenium Grid URL - can be overridden via system property
-    private static final String DEFAULT_GRID_URL = "http://192.168.81.92:4444/wd/hub";
+    private static final String DEFAULT_GRID_URL = "http://localhost:4444/wd/hub";
     
     @BeforeMethod
     public void setUp() throws MalformedURLException {
