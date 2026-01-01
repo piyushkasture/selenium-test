@@ -1,4 +1,4 @@
-# Docker Selenium Test Project
+# Docker Selenium Sample test
 
 This project contains Selenium WebDriver tests using TestNG that can run against a Selenium Grid.
 
