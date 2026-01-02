@@ -26,6 +26,7 @@ pipeline {
 
         stage('Build & Test') {
             steps {
+				bat 'echo %JAVA_HOME%'
                 bat 'mvn clean test'
             }
         }
