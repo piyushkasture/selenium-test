@@ -1,5 +1,5 @@
 pipeline {
-    agent none   // pipeline itself not tied to one node
+    agent none
 
     options {
         disableConcurrentBuilds()
@@ -19,9 +19,7 @@ pipeline {
             agent any
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/mobilitytrackinginfra/selenium-test.git'
-                    // add credentialsId if repo is private
-                    // credentialsId: 'your-jenkins-credentials-id'
+                    url: 'https://github.com/piyushkasture/selenium-test.git'
             }
         }
 
@@ -47,6 +45,14 @@ pipeline {
                 }
             }
         }
+
+        stage('Archive Reports') {
+            agent any
+            steps {
+                echo 'Archiving test reports'
+                junit '**/target/surefire-reports/*.xml'
+            }
+        }
     }
 
     post {
@@ -58,13 +64,6 @@ pipeline {
         }
         failure {
             echo 'Build or test execution failed'
-        }
-        always {
-            agent any   // give post block a workspace
-            steps {
-                echo 'Archiving test reports'
-                junit '**/target/surefire-reports/*.xml'
-            }
         }
     }
 }
