@@ -1,6 +1,6 @@
 pipeline {
 	//agent any
-    agent { label 'node1 || node2' }
+    agent { label 'node1' }
 
     options {
         disableConcurrentBuilds()
